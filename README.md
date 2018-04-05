@@ -4,7 +4,7 @@ db-on-docker
 # Run services
 mkdir ~/projs
 cd ~/projs
-git clone https://github.com/devteds/e8-db-on-docker.git db-on-docker
+git clone db-on-docker
 cd db-on-docker
 mkdir data
 docker-compose up
