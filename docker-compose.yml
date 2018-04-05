@@ -1,0 +1,47 @@
+version: '3'
+
+services: 
+
+  mysql-dev:
+    image: mysql:8.0.2
+    environment: 
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: myproduct
+    ports:
+      - "3308:3306"
+    volumes: 
+       - /Users/my.conf:/etc/mysql/conf.d/config-file.cnf
+       - /Users/data:/var/lib/mysql 
+# Run:
+# docker-compose up
+# this will does following:
+# 1) pulls the mysql image from docker store
+# 2) create the container and runs on port 3308
+# 3) you should be able to access the db using local host
+
+# volumes
+# my.cnf to define user defined configs
+# to store data in local folder: data
+
+
+
+  mysql-legacy:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: legacyapp
+    ports:
+      - "3309:3306"
+         
+  # adminer is a app that used to manage the db 
+  admin:
+    image: adminer
+    ports:
+      - 8080:8080
+
+  client:
+    image: mysql:8.0.2
+    depends_on:
+      - mysql-dev
+    command: mysql -uroot -ppassword -hmysql-dev myproduct
+
