@@ -1,7 +1,7 @@
 db-on-docker
 
 
-#Run services
+# Run services
 mkdir ~/projs
 cd ~/projs
 git clone https://github.com/devteds/e8-db-on-docker.git db-on-docker
@@ -22,7 +22,7 @@ Test with PHP based adminer tool that run on container - http://localhost:8080
 * docker-compose exec mysql-legacy mysql -uroot -ppassword legacyapp
 * docker-compose exec pgdb psql -U root -W blogapp
 
-#A few useful commands
-docker-compose stop
-docker-compose rm
-docker-compose rm -f 
+# A few useful commands
+- docker-compose stop
+- docker-compose rm
+- docker-compose rm -f 
