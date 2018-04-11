@@ -10,7 +10,7 @@ mkdir data
 docker-compose up
 
 # on new terminal tab
-cd ~/projs/db-on-docker
+```cd ~/projs/db-on-docker
 docker-compose ps
 Test connection - multiple options
 Test connection w/ database client on host OS using host OS ports
