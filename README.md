@@ -26,3 +26,6 @@ docker-compose ps
 - docker-compose stop
 - docker-compose rm
 - docker-compose rm -f 
+
+## cleanup ##
+- docker rm $(docker ps -a -q)
